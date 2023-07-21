@@ -1,0 +1,438 @@
+:root {
+  --clr-div1: rgb(17, 17, 17);
+  --clr-div2: rgb(31, 31, 31);
+  --clr-div3: rgb(31, 31, 31);
+
+  --clr-text: rgb(192, 192, 192);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Myriad Pro', sans-serif;
+  font-size: 1.3rem;
+}
+
+div * {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  background-color: rgb(27, 27, 27);
+  color: rgb(192, 192, 192);
+}
+
+h1 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.padding-3 {
+  padding: 3rem;
+}
+
+
+nav, header {
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* Adjust this value as needed */
+  background-color: rgb(27, 27, 27);
+  width: 100%;
+}
+
+header {
+  padding: 2em;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-self: center;
+}
+
+.nav-button {
+  height: 3em;
+  background-color: rgb(27, 27, 27);
+  color: rgb(192, 192, 192);
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+  border-bottom: .1em;
+  border-bottom-style: solid;
+}
+
+.logo {
+  width: 5em;
+  height: 5em;
+  overflow: hidden;
+  border: 0em;
+  border-radius: 5em;
+}
+
+.div1 {
+  background-color: var(--clr-div1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+  gap: 2em;
+}
+
+.div2 {
+  background-color: var(--clr-div2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+}
+
+.text-and.video {
+  margin: 1em;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5em;
+}
+
+.text-and {
+  display: flex;
+  gap: 3em;
+}
+
+.text-and.image {
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+}
+
+.video-player {
+  width: 50%;
+  object-fit: cover;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s;
+  width: 100%;
+  height: auto;
+}
+
+
+.carousel-inner img {
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.div2>h1 {
+  margin: 2em;
+}
+
+.arrow_left:hover, .arrow_right:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.carousel .arrow.left {
+  left: 0;
+}
+
+.carousel .arrow.right {
+  right: 0;
+}
+
+.button_examples {
+  background-color: rgb(0, 109, 49);
+  color: rgb(255, 255, 255);
+  padding: 1em .5em 1em .5em;
+  width: 14rem;
+  height: 5rem;
+  text-align: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.title_div1 {
+  padding: 1em;
+  padding-bottom: 2em;
+}
+
+.text-secondpage {
+  text-align: center;
+}
+
+/* Hier ist der Vorher-Nachher slider auf der 2. Seite */
+
+.slider {
+  position: relative;
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+  user-select: none;
+}
+
+.slider img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.slider .slider-inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: url('images/rtx.jpg');
+  background-size: cover;
+  width: 0;
+  transition: width 0.1s;
+  user-select: none;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  background: #0d6e00;
+  opacity: 0.7;
+  cursor: grab;
+  transition: left 0.1s;
+  user-select: none;
+}
+
+#slider-image {
+  object-fit: fill;
+  user-select: none;
+}
+
+
+.div3 {
+  background-color: var(--clr-div3);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+  gap: 5em;
+}
+
+.div4 {
+  background-color: var(--clr-div1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.div4>.div2 {
+  width: 50%;
+  display: block;
+}
+
+.div4>.div2>.text-and.image {
+  margin-bottom: 5em;
+  gap: 2em;
+}
+
+.div2>.text-and.image>.video-player {
+  width: 100% !important;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Cool video on scroll right here: */
+
+#VideoContainer>video {
+  position: sticky !important;
+  top: 0;
+  z-index: 9999; /* Adjust this value as needed */
+  width: 100vw;
+  height: 100vh;
+}
+
+.margin-3em {
+  margin-bottom: 3em;
+}
+
+@media (max-width: 900px) {
+  /* CSS rules here will be applied when the viewport is 900px or less */
+
+  .div1, .div2, .div3, .div4, .text-and.video {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    padding: 2em;
+    gap: 2em;
+  }
+
+  h1 {
+    font-size: 5vw;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .text-and.video {
+    flex-direction: column;
+  }
+
+  .text-and {
+    padding: 0 !important;
+    width: 100%;
+    align-items: center;
+  }
+
+  .text-and.image>img {
+    width: auto;
+    height: 100%;
+  }
+
+  .carousel {
+    width: 90%;
+  }
+
+  .video-player, .text {
+    height: auto;
+    width: 100%;
+  }
+
+  #VideoContainer>video {
+    object-fit: cover;
+    position: sticky;
+    top: 187px;
+  }
+
+  .margin-3em {
+    margin-bottom: 0;
+  }
+}
