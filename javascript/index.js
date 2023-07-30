@@ -23,24 +23,26 @@ video.addEventListener("mouseout", ()=> {
 
 // Das Bilder Karousel:
 
-var carousel = document.querySelector('.carousel');
-var images = Array.from(carousel.querySelectorAll('img'));
-var currentIndex = 0;
-var carouselInner = carousel.querySelector('.carousel-inner');
-var carouselWidth = carousel.offsetWidth
+document.addEventListener("DOMContentLoaded", () => {
+  var carousel = document.querySelector('.carousel');
+  var images = Array.from(carousel.querySelectorAll('img'));
+  var currentIndex = 0;
+  var carouselInner = carousel.querySelector('.carousel-inner');
+  var carouselWidth = carousel.offsetWidth
 
-function updateCarousel() {
-  carouselInner.style.transform = 'translateX(' + (-currentIndex * carouselWidth) + 'px)';
-}
+  function updateCarousel() {
+    carouselInner.style.transform = 'translateX(' + (-currentIndex * carouselWidth) + 'px)';
+  }
 
-carousel.querySelector('.arrow.left').addEventListener('click', function() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel();
-});
+  carousel.querySelector('.arrow.left').addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel();
+  });
 
-carousel.querySelector('.arrow.right').addEventListener('click', function() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel();
-});
+  carousel.querySelector('.arrow.right').addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarousel();
+  });
 
 
+})
