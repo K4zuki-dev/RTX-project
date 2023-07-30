@@ -34,9 +34,6 @@ ol[role='list'] {
 }
 
 /* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
 
 /* Set core body defaults */
 body {
@@ -67,9 +64,6 @@ select {
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
   
   *,
   *::before,
@@ -77,12 +71,10 @@ select {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
 
 * {
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -132,6 +124,7 @@ header {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-self: center;
@@ -215,7 +208,6 @@ button:hover {
   position: relative;
   width: 100%;
   height: 50%;
-  overflow: hidden;
 }
 
 .carousel-inner {
@@ -223,10 +215,11 @@ button:hover {
   transition: transform 0.5s;
   width: 100%;
   height: auto;
+  overflow: visible;
 }
 
 
-.carousel-inner img {
+.carousel-inner>img {
   min-width: 100%;
   object-fit: cover;
 }
@@ -369,14 +362,17 @@ button:hover {
   gap: 1em;
 }
 
-/* Cool video on scroll right here: */
+#VideoContainer {
+  display: block;
+  position: relative;
+  min-height: 100em;
+}
 
-#VideoContainer>video {
-  position: sticky !important;
-  top: 0;
-  z-index: 9999; /* Adjust this value as needed */
-  width: 100vw;
+#video {
+  z-index: 9999; 
   height: 100vh;
+  top: 0;
+  position: sticky;
 }
 
 .margin-3em {
@@ -384,7 +380,6 @@ button:hover {
 }
 
 @media (max-width: 900px) {
-  /* CSS rules here will be applied when the viewport is 900px or less */
 
   .div1, .div2, .div3, .div4, .text-and.video {
     flex-direction: column;
@@ -393,10 +388,6 @@ button:hover {
     width: 90%;
     padding: 2em;
     gap: 2em;
-  }
-
-  h1 {
-    font-size: 5vw;
   }
 
   .logo {
@@ -428,7 +419,6 @@ button:hover {
   }
 
   #VideoContainer>video {
-    object-fit: cover;
     position: sticky;
     top: 187px;
   }
